@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j='http://jakarta.apache.org/log4j/'>
+	<appender name="roller" class="org.apache.log4j.RollingFileAppender">
+	<param name="maxFileSize" value="1MB" />
+	 <param name="MaxBackupIndex" value="2"/>
+		<param name="File" value="Applicationlog.log" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern"
+				value="%d{yyyy-MMM-dd HH:mm:ss,SSS} [%t] %c %x%n  %-5p %m%n" />
+		</layout>
+	</appender>
+	<appender name="emailAppender" class="org.apache.log4j.net.SMTPAppender">
+    <param name="BufferSize" value="1024" />
+    <param name="SMTPHost" value="javacodegeeks.smtp.host" />
+    <param name="From" value="admin@javacodegeeks.com" />
+    <param name="To" value="user1@yahoo.com.com,user2@yahoo.com" />
+    <param name="Subject" value="Log4J XML Configuration Example" />
+    <layout class="org.apache.log4j.PatternLayout">
+        <param name="ConversionPattern" value="[%t] %-5p %c - %m%n" />
+    </layout>
+    <filter class="org.apache.log4j.varia.LevelRangeFilter">
+        <param name="LevelMin" value="WARN" />
+        <param name="LevelMax" value="FATAL" />
+    </filter>
+</appender>
+	
+
+	<root>
+		<level value="DEBUG" />
+		<appender-ref ref="roller" />
+	</root>
+</log4j:configuration>	

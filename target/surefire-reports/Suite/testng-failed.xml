@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" verbose="0" name="Failed suite [Suite]">
+  <parameter name="browser" value="chrome"/>
+  <listeners>
+    <listener class-name="utils.ListenerTest"/>
+  </listeners>
+  <test name="Test(failed)">
+    <classes>
+      <class name="com.oms.tests.LoginPageTest">
+        <methods>
+          <include name="TestloginToApplicationWithValidCredentials_TC_01"/>
+          <include name="startWebdriver"/>
+          <include name="TestloginToApplicationWithInValidCredentials_TC_02"/>
+        </methods>
+      </class> <!-- com.oms.tests.LoginPageTest -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" verbose="0" name="Failed suite [SmokeTest]">
+  <listeners>
+    <listener class-name="utils.ListenerTest"/>
+  </listeners>
+  <test name="Chrome Test(failed)">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="com.oms.tests.LoginPageTest">
+        <methods>
+          <include name="TestResult"/>
+          <include name="TestloginToApplicationWithValidCredentials_TC_01"/>
+          <include name="endReport"/>
+          <include name="startWebdriver"/>
+          <include name="TestloginToApplicationWithInValidCredentials_TC_02"/>
+          <include name="oneTimeTearDown"/>
+          <include name="ExtentReportStart"/>
+          <include name="nameBefore"/>
+        </methods>
+      </class> <!-- com.oms.tests.LoginPageTest -->
+    </classes>
+  </test> <!-- Chrome Test(failed) -->
+</suite> <!-- Failed suite [SmokeTest] -->
